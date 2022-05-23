@@ -7,7 +7,6 @@
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
     <title>{{ .Site.Title }}</title>
-    <meta name="theme-color" content="##fffefa" />
     <meta name="keywords" content="Jack's CoolWeb" />
     <meta name="description" content="Jack's CoolWeb" />
     <meta property="og:type" content="article" />
@@ -76,7 +75,7 @@
             </div>
           </header>
           <ul id="main-menu" class="main-menu">
-            {{ $dataJ := getJSON"https://gitee.com/realjackwang/application_config/raw/master/coolweb/webstack.json"}} {{ range $dataJ }} {{ if .list }}
+            {{ $dataJ := getJSON "https://gitee.com/realjackwang/application_config/raw/master/coolweb/webstack.json" }} {{ range $dataJ }} {{ if .list }}
             <li>
               <a>
                 <i class="fa {{ .icon }} fa-fw"></i>
@@ -119,7 +118,7 @@
         </nav>
         {{ template "search.html" . }}
         <div class="sites-list" style="margin-bottom: 8.5rem">
-          {{ $dataJ := getJSON"https://gitee.com/realjackwang/application_config/raw/master/coolweb/webstack.json"}} {{ range $dataJ }} {{ if .list }} {{ range .list }}
+          {{ $dataJ := getJSON "https://gitee.com/realjackwang/application_config/raw/master/coolweb/webstack.json" }} {{ range $dataJ }} {{ if .list }} {{ range .list }}
           <!-- {{ .term }} -->
           <h4 class="text-gray" style="display: inline-block">
             <i
@@ -132,12 +131,10 @@
           </h4>
           <div class="row">
             {{ range .links }} {{ if .qrcode }}
-            <div class="xe-card col-sm-4 col-md-3 qrcode">
+            <div class="col-sm-3">
               <div
-                onclick="window.open('{{ .url }}')"
-                href="javascript:"
-                target=""
                 class="xe-widget xe-conversations box2 label-info"
+                onclick="window.open('{{ .url }}')"
                 data-toggle="popover"
                 data-trigger="hover"
                 data-placement="bottom"
@@ -169,13 +166,11 @@
             {{ else }}
             <div class="col-sm-3">
               <div
-                onclick="window.open('{{ .url }}')"
-                href="{{ .url }}"
-                target="_blank"
                 class="xe-widget xe-conversations box2 label-info"
+                onclick="window.open('{{ .url }}')"
                 data-toggle="tooltip"
                 data-placement="bottom"
-                title="{{ .url }}"
+                title=""
                 data-original-title="{{ .url }}"
               >
                 <div class="xe-comment-entry">
@@ -219,8 +214,6 @@
             <div class="col-md-3">
               <div
                 onclick="window.open('{{ .url }}')"
-                href="javascript:"
-                target=""
                 class="xe-widget xe-conversations box2 label-info"
                 data-toggle="popover"
                 data-trigger="hover"
@@ -254,7 +247,6 @@
             <div class="col-md-3">
               <div
                 onclick="window.open('{{ .url }}')"
-                href="{{ .url }}"
                 target="_blank"
                 class="xe-widget xe-conversations box2 label-info"
                 data-toggle="tooltip"
@@ -288,6 +280,7 @@
           <br />
           <!--END {{ .taxonomy }} -->
           {{ end }} {{ end }}
+          
         </div>
 
         <footer class="main-footer sticky footer-type-1">
@@ -299,22 +292,17 @@
           <div class="footer-inner">
             <div class="footer-text">
               Copyright © {{ now.Format "2006"}}
-              <a href=""
-                ><strong
-                  >{{ if .Site.Copyright }}{{ .Site.Copyright | safeHTML }}{{
-                  else }}iplaycode{{ end }}</strong
-                ></a
-              >&nbsp;&nbsp;Design by
-              <a href="http://viggoz.com" target="_blank"
-                ><strong>Viggo</strong></a
-              >&nbsp;&nbsp;Themes by
-              <a href="https://github.com/iplaycode" target="_blank"
-                ><strong>iplaycode</strong></a
-              >
+              <a href="">
+                <strong>
+                  {{ if .Site.Copyright }}{{ .Site.Copyright | safeHTML }}{{ else }}iplaycode{{ end }}
+                </strong>
+              </a>
+              &nbsp;&nbsp;Design by
+              <a href="http://viggoz.com" target="_blank"><strong>Viggo</strong></a>
+              &nbsp;&nbsp;Themes by
+              <a href="https://github.com/iplaycode" target="_blank"><strong>iplaycode</strong></a>
               &
-              <a href="https://github.com/volfclub/tundra-wolf" target="_blank"
-                ><strong>volfclub</strong></a
-              >
+              <a href="https://github.com/volfclub/tundra-wolf" target="_blank"><strong>volfclub</strong></a>
             </div>
           </div>
         </footer>
