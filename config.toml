@@ -1,15 +1,19 @@
-baseURL = "http://example.org/"
+baseURL = "http://jackwang.cn/"
 languageCode = "zh-CN"
-title = "WebStack网址导航 Hugo主题"
+title = "Cool Web - Jack Wang"
 theme = "webstack-hugo"
 preserveTaxonomyNames = true
 disablePathToLower = true
 hasCJKLanguage = true
-copyright = ""
+copyright = "Jack Wang"
 [params]
-  author = "iplaycode"
+  author = "Jack Wang"
   description = "Webstack Hugo"
 [params.search]
-  enable = true
+  enable = false
 [params.darkmode]
   enable = false
+[caches]
+  [caches.getjson]
+    dir = ':cacheDir/:project'
+    maxAge = '1h'
